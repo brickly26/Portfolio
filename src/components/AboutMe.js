@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function AboutMe({ currentPage, handlePageChange }) {
   return (
-    <section class="section-cards" id="about-me">
-      <div class="title">
+    <section className="section-cards" id="about-me">
+      <div className="title">
           <h2>About Me</h2>
       </div>
       <div id="body">
