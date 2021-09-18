@@ -8,16 +8,18 @@ function Nav({ currentPage, handlePageChange }) {
             href="#about-me"
             onClick={() => handlePageChange("AboutMe")}
             >
-                <li>About Me</li>
+                <li className={currentPage === 'AboutMe' ? "nav-project" : ''}>About Me</li>
             </a>
             <a 
             href="#work"
             onClick={() => handlePageChange("Projects")}
             >
-                <li class="nav-project">My Projects</li>
+                <li className={currentPage === 'Projects' ? "nav-project" : ''}>My Projects</li>
             </a>
-            <a href="#contact-me">
-                <li>Contact Me</li>
+            <a href="#contact-me"
+            onClick={() => handlePageChange("ContactMe")}
+            >
+                <li className={currentPage === 'ContactMe' ? "nav-project" : ''}>Contact Me</li>
             </a>
             <a href="https://github.com/brickly26">
                 <li>Github</li>

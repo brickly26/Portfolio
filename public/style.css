@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  background-color: rgb(14, 96, 114);
+  width: 100%;
+  height: 100px;
+  align-items: center;
+}
+
+p {
+  margin: 20px;
+  font-size: larger;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  border-bottom: rgb(21, 135, 160) solid 5px;
+}
+
+#profile {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 90px;
+  border-radius: 15px;
+}
+
+h1 {
+  margin-left: 15px;
+  color: white;
+}
+
+nav {
+  background-color: rgb(21, 135, 160);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  height: 55px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  height: 100%;
+}
+
+li {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+li:hover {
+  background-color: whitesmoke;
+  color: rgb(21, 135, 160);
+}
+
+.nav-project {
+  background-color: darkslategrey;
+}
+
+.nav_project:hover {
+  background-color: rgb(21, 135, 160);
+  color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-cards {
+  display: flex;
+
+  margin-right: 8%;
+  margin-left: 8%;
+  margin-top: 5%;
+  width: 84%;
+  border-radius: 15px;
+  box-shadow: 6px 6px 20px #0000008f;
+  border: 2px solid rgb(14, 96, 114);
+  padding: 20px;
+}
+
+.cards1 {
+  display: flex;
+  margin: 25px;
+  align-items: flex-end;
+  height: 250px;
+  width: 250px;
+  background-size: cover;
+  border-radius: 15px;
+  border: 3px solid rgb(14, 96, 114);
+}
+
+.cards1:hover {
+  border: 4px solid rgb(21, 135, 160);
+}
+
+.cards1:hover #p2-title {
+  background-color: rgb(21, 135, 160);
+}
+
+#about-me {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#work {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards {
+  background-size: cover;
+  border-radius: 15px;
+  border: 3px solid rgb(14, 96, 114);
+}
+
+#main-project {
+  width: 90%;
+  height: 250px;
+  margin: 5%;
+}
+
+.cards:hover {
+  border: 4px solid rgb(21, 135, 160);
+}
+
+.cards:hover #p1-title {
+  background-color: rgb(21, 135, 160);
+}
+
+#project-1 {
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  background-image: url(../images/STKR.png);
+  background-size: cover;
+}
+
+h4 {
+  width: 100%;
+  border-radius: 0px 0px 11px 11px;
+  color: whitesmoke;
+  background-color: rgb(14, 96, 114);
+  text-align: center;
+}
+
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#project-2 {
+  background-image: url(../images/Parker-app-map.png);
+  background-size: cover;
+}
+
+#project-3 {
+  background-image: url(../images/tech1.jpeg);
+  background-size: cover;
+}
+
+#project-4 {
+  background-image: url(../images/tech3.jpeg);
+  background-size: cover;
+}
+
+#contact-me {
+  display: flex;
+  margin-top: 5%;
+  height: 75px;
+  width: 100%;
+  background-color: rgb(21, 135, 160);
+  color: white;
+}
+
+#cont {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: darkslategrey;
+}
+
+#info {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media screen and (max-width: 850px) {
+  nav {
+    height: 232px;
+    justify-content: flex-start;
+  }
+
+  ul {
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    margin-top: 175px;
+  }
+
+  li {
+    display: block;
+  }
+
+  #contact-me {
+    flex-direction: column;
+    height: 150px;
+  }
+
+  #cont {
+    height: 75px;
+    width: 100%;
+  }
+
+  #info {
+    height: 75px;
+    width: 100%;
+  }
+}
