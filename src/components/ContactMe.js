@@ -39,7 +39,6 @@ function ContactMe({ currentPage, handlePageChange }) {
   const formHandler = function(event) {
     event.preventDefault();
 
-    document.getElementById("myForm").reset();
 
     // for (let input of inputs) {
     //   input.textContent = '';

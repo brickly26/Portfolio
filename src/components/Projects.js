@@ -14,19 +14,19 @@ function Projects({ currentPage, handlePageChange }) {
           </a>
       </div>
       <div id="projects">
-          <a href="https://github.com/zanamama/parker">
+          <a href="https://parker-live.herokuapp.com">
               <div className="cards1" id="project-2">
-                  <h4 id="p2-title">Project 2</h4>
+                  <h4 id="p2-title">Parker</h4>
               </div>
           </a>
-          <a href="#work">
+          <a href="https://tech-blog-ba.herokuapp.com/">
               <div className="cards1" id="project-3">
-                  <h4 id="p2-title">Project 3</h4>
+                  <h4 id="p2-title">Tech Blog</h4>
               </div>
           </a>
-          <a href="#work">
+          <a href="https://brickly26.github.io/Code-Quiz/">
               <div className="cards1" id="project-4">
-                  <h4 id="p2-title">Project 4</h4>
+                  <h4 id="p2-title">Code Quiz</h4>
               </div>
           </a>
       </div>
