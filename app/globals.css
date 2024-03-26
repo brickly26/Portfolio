@@ -2,32 +2,271 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+
+    --blob-x: 80px;
+    --blob-nx: -80px;
+    --blob-y: 80px;
+    --blob-ny: -80px;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.blink {
+  animation: blinker 1s step-end infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.glow {
+  border-radius: 50%;
+  box-shadow: 0 0 200px 110px #fff;
+}
+
+@keyframes in {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.blobs-container {
+  width: 288px;
+  height: 288px;
+  position: absolute;
+  z-index: 10;
+  animation: in 3s linear 0s infinite reverse;
+  animation-play-state: paused;
+}
+
+.blobs-container:hover {
+  animation-play-state: running;
+}
+
+.blobs {
+  filter: url("#goo");
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  width: 288px;
+  height: 288px;
+  animation: in 7s linear 0s infinite normal;
+}
+
+.blob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 128px;
+  height: 128px;
+  margin-top: -50px;
+  margin-left: -50px;
+  background: linear-gradient(to right, #4ade80, #1d4ed8, #4ade80);
+  background-size: 200%;
+  animation: blob-left-top-anim cubic-bezier(0.77, 0, 0.175, 1) 8s infinite,
+    move-left-top cubic-bezier(0.77, 0, 0.175, 1) 4s infinite;
+
+  &:nth-child(2) {
+    animation-name: blob-right-top-anim, move-right-top;
+  }
+  &:nth-child(3) {
+    animation-name: blob-left-bottom-anim, move-left-bottom;
+  }
+  &:nth-child(4) {
+    animation-name: blob-right-bottom-anim, move-right-bottom;
+  }
+}
+
+@keyframes move-left-top {
+  0% {
+    background-position: 0 center;
+  }
+  33% {
+    background-position: var(--blob-nx) center;
+  }
+  62% {
+    background-position: var(--blob-nx) center;
+  }
+  94% {
+    background-position: 0 center;
+  }
+}
+
+@keyframes move-right-top {
+  0% {
+    background-position: 0 center;
+  }
+  33% {
+    background-position: var(--blob-x) center;
+  }
+  64% {
+    background-position: var(--blob-x) center;
+  }
+  96% {
+    background-position: 0 center;
+  }
+}
+
+@keyframes move-left-bottom {
+  0% {
+    background-position: 0 center;
+  }
+  33% {
+    background-position: var(--blob-nx) center;
+  }
+  66% {
+    background-position: var(--blob-nx) center;
+  }
+  98% {
+    background-position: 0 center;
+  }
+}
+
+@keyframes move-right-bottom {
+  0% {
+    background-position: 0 center;
+  }
+  33% {
+    background-position: var(--blob-x) center;
+  }
+  68% {
+    background-position: var(--blob-x) center;
+  }
+  100% {
+    background-position: 0 center;
+  }
+}
+
+@keyframes blob-left-top-anim {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  33% {
+    transform: scale(0.9) translate(var(--blob-nx), 0);
+  }
+  62% {
+    transform: scale(0.7) translate(var(--blob-nx), var(--blob-ny));
+  }
+  94% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+@keyframes blob-right-top-anim {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  33% {
+    transform: scale(0.9) translate(var(--blob-x), 0);
+  }
+  64% {
+    transform: scale(0.7) translate(var(--blob-x), var(--blob-ny));
+  }
+  96% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+@keyframes blob-left-bottom-anim {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  33% {
+    transform: scale(0.9) translate(var(--blob-nx), 0);
+  }
+  66% {
+    transform: scale(0.7) translate(var(--blob-nx), var(--blob-y));
+  }
+  98% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+@keyframes blob-right-bottom-anim {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  33% {
+    transform: scale(0.9) translate(var(--blob-x), 0);
+  }
+  68% {
+    transform: scale(0.7) translate(var(--blob-x), var(--blob-y));
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0);
   }
 }
