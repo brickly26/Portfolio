@@ -30,14 +30,14 @@ export default function Projects() {
       tech: [SiNextdotjs, SiReactquery, SiSupabase, SiTailwindcss],
       link: "http://localhost:3000",
       cover: "/project1.png",
-      background: "bg-green-400",
+      background: "sm:bg-green-400 bg-blue-700",
     },
     {
       title: "E-learning platform",
       tech: [SiNextdotjs, SiReactquery, SiSupabase, SiTailwindcss],
       link: "http://localhost:3000",
       cover: "/project1.png",
-      background: "bg-blue-700",
+      background: "sm:bg-blue-700 bg-green-400",
     },
   ];
   return (
