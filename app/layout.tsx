@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("buraksu.me"),
+  metadataBase: new URL("https://www.buraksu.me/"),
 
   title: "Burak Aksu",
   authors: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Burak Aksu",
     description:
       "Welcome to my corner of the internet. I am a full stack developer based in New York.",
-    url: "buraksu.me",
+    url: "https://www.buraksu.me/",
     siteName: "Burak Aksu",
     images: "/og-img.png",
     type: "website",
