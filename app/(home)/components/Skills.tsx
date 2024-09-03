@@ -9,6 +9,9 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiPrisma,
+  SiGraphql,
+  SiChakraui,
 } from "react-icons/si";
 
 export default function Skills() {
@@ -36,6 +39,18 @@ export default function Skills() {
     {
       text: "Node.js",
       Icon: SiNodedotjs,
+    },
+    {
+      text: "Prisma",
+      Icon: SiPrisma,
+    },
+    {
+      text: "GraphQL",
+      Icon: SiGraphql,
+    },
+    {
+      text: "Chakra UI",
+      Icon: SiChakraui,
     },
   ];
 
